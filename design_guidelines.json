@@ -1,0 +1,141 @@
+{
+  "theme": "dark",
+  "typography": {
+    "heading_font": "Space Grotesk",
+    "body_font": "Inter",
+    "scale": {
+      "h1": "text-5xl md:text-6xl lg:text-[7rem] leading-[1.1] tracking-tighter",
+      "h2": "text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight",
+      "h3": "text-2xl md:text-3xl lg:text-4xl leading-snug tracking-tight",
+      "h4": "text-xl md:text-2xl leading-snug",
+      "body": "text-base md:text-lg leading-relaxed",
+      "small": "text-sm tracking-wide uppercase",
+      "overline": "text-xs md:text-sm tracking-[0.2em] uppercase font-bold"
+    },
+    "rules": [
+      "Strict left alignment for all typography to maintain an editorial, authoritative stance.",
+      "Never center-align headings or body text.",
+      "Use extremely tight tracking (tracking-tighter) for massive headings.",
+      "Muted text should use text-zinc-400 or text-zinc-500 for secondary hierarchy."
+    ]
+  },
+  "colors": {
+    "background": "#050505",
+    "surface": "#121212",
+    "primary_text": "#FFFFFF",
+    "secondary_text": "#A1A1AA",
+    "accent": "#3B82F6",
+    "accent_secondary": "#8B5CF6",
+    "rules": [
+      "No large gradients. Keep the background deep void black.",
+      "The accent color (Electric Blue #3B82F6) should be used minimally, e.g., for tiny hover states, a single animated dot, or small typographic highlights.",
+      "Use 1px border-white/10 for subtle separation where necessary, rather than solid blocks of gray.",
+      "Pure #000000 is allowed for deepest contrast, but #050505 is the base."
+    ]
+  },
+  "layouts": {
+    "global": "Container with massive padding, e.g., px-6 md:px-12 lg:px-24.",
+    "sections": "Vertical spacing must be extreme: py-24 md:py-32 lg:py-48 between major sections.",
+    "hero": "Two-column grid on large screens. Left: Kinetic typography. Right: 3D/Abstract subtle visual.",
+    "about": "grid grid-cols-1 md:grid-cols-12 gap-12. Portrait takes 4 columns, intro takes 8 columns.",
+    "selected_work": "Editorial grid. grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-24. No cards, just raw image and text below.",
+    "skills": "Categorized minimalist lists. No progress bars. Use CSS grid for listing skills strictly.",
+    "contact": "Massive minimal CTA. Two columns: Form on one side, raw contact info (Email/Location) on the other."
+  },
+  "visual_enhancers": {
+    "borders": "border-white/10 for any structural lines.",
+    "radius": "rounded-none or extremely minimal rounded-sm (2px). Keep it sharp and brutalist/editorial.",
+    "textures": "Include a subtle SVG noise overlay fixed across the whole screen to give a cinematic, grainy film look (opacity-20).",
+    "overlay": "If text is over an image, use bg-black/40."
+  },
+  "motion": {
+    "scrolling": "MANDATORY: Use lenis (or @studio-freight/react-lenis) for premium smooth scrolling.",
+    "hero_reveal": "Signature masked text reveal: overflow-hidden wrapper, motion.div y: '100%' -> 0 with a slow ease-out (e.g., [0.16, 1, 0.3, 1]).",
+    "scroll_reveal": "Framer Motion whileInView fade-up (opacity: 0, y: 30) -> (opacity: 1, y: 0) with viewport={{ once: true, margin: '-100px' }}.",
+    "hover_effects": "Project image hover: group-hover scale-105 duration-700 ease-out on the image. Arrow icon translates right and up (translate-x-2 -translate-y-2).",
+    "marquee": "Use react-fast-marquee for a slow, editorial ribbon separating sections. Pale text on dark background."
+  },
+  "components": {
+    "Navbar": "Sticky fixed top, w-full, z-50. backdrop-blur-xl bg-black/60. 1px border-b border-white/10. Logo left, Links center/right, 'Let's Talk' button (sharp corners, border border-white hover:bg-white hover:text-black transition-colors).",
+    "Hero": "Full height min-h-screen flex items-center. Staggered H1 reveal.",
+    "ProjectItem": "No background card. Image container with overflow-hidden aspect-[4/3] or aspect-[3/4]. Image scales on hover. Text sits below: Title (H4), Category (text-sm text-zinc-500).",
+    "ProjectDetailModal": "Use Shadcn Dialog but customize heavily: remove background/padding to make it an edge-to-edge cinematic overlay, or build a custom full-screen Framer Motion modal.",
+    "StatsRow": "Flex or Grid with border-l border-white/20 pl-4. Huge number (text-4xl), small label (text-xs).",
+    "Marquee": "Large uppercase text 'CREATIVE DESIGN • MOTION GRAPHICS • INTERACTIVE MEDIA', font-serif or Space Grotesk, text-transparent bg-clip-text border-text (stroke effect if possible, or just text-zinc-800)."
+  },
+  "3d_libraries": {
+    "recommendation": "@react-three/fiber and @react-three/drei",
+    "usage": "Use for the Hero section's right side. A subtle, slowly rotating abstract geometric mesh (like an icosahedron or torus knot) with wireframe material or a dark glass shader, illuminated by a very faint blue/purple point light to hit the 'subtle accent' requirement."
+  },
+  "media": {
+    "images": [
+      {
+        "category": "Hero Abstract/3D Visual (Fallback if WebGL is not used)",
+        "url": "https://images.unsplash.com/photo-1678366633407-7f49da199a42?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwzfHxkYXJrJTIwY2luZW1hdGljJTIwYWJzdHJhY3QlMjAzZHxlbnwwfHx8fDE3ODcwNTc4NzV8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Curved black ribbons with soft highlights against a dark background"
+      },
+      {
+        "category": "About Me Portrait",
+        "url": "https://images.pexels.com/photos/32321512/pexels-photo-32321512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Side-profile portrait of a young man in a black hoodie against dark background."
+      },
+      {
+        "category": "Project 1 (App UI/UX)",
+        "url": "https://images.pexels.com/photos/36136699/pexels-photo-36136699.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "A smartphone displaying an app screen lies on a dark surface."
+      },
+      {
+        "category": "Project 2 (Web/Dashboard)",
+        "url": "https://images.pexels.com/photos/30530403/pexels-photo-30530403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "A dark-themed laptop screen displaying interface."
+      },
+      {
+        "category": "Project 3 (Motion Graphics)",
+        "url": "https://images.pexels.com/photos/26545221/pexels-photo-26545221.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Dynamic neon blue and purple abstract wave pattern."
+      },
+      {
+        "category": "Project 4 (3D Rendering)",
+        "url": "https://images.pexels.com/photos/29450016/pexels-photo-29450016.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "A digital artwork featuring luminous 3D geometric shapes in a dark abstract style."
+      },
+      {
+        "category": "Project 5 (Branding/Concept)",
+        "url": "https://images.pexels.com/photos/13669302/pexels-photo-13669302.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Atmospheric night scene in an urban alley with a vintage car."
+      },
+      {
+        "category": "Project 6 (Editorial/Print)",
+        "url": "https://images.pexels.com/photos/8824026/pexels-photo-8824026.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Close-up of an open book page featuring the word 'rules' with a black background."
+      }
+    ]
+  },
+  "accessibility": {
+    "contrast": "Ensure secondary text (#A1A1AA) passes minimum 4.5:1 ratio against #050505.",
+    "focus": "focus:outline-none focus-visible:ring-1 focus-visible:ring-white for interactive elements.",
+    "motion": "Respect prefers-reduced-motion for all framer-motion reveals.",
+    "testid": "Add data-testid to all links, buttons, and form inputs."
+  },
+  "instructions_to_main_agent": [
+    "Install required dependencies: framer-motion, @studio-freight/react-lenis, lucide-react, react-fast-marquee, @react-three/fiber, @react-three/drei.",
+    "Do NOT use HTML <input> or <textarea> directly for the contact form; use Shadcn UI Input/Textarea components but strip them of generic styling (make them flat, border-b only, dark background).",
+    "Implement Lenis smooth scrolling globally in the main layout.",
+    "For the Hero section, build the 'masked line-by-line reveal' strictly using Framer Motion with overflow-hidden on each line's wrapper.",
+    "Keep standard Awwwards style: Massive type, large high-quality edge-to-edge images, no rounded standard 'cards', sharp edges.",
+    "Make sure all interactive elements have data-testid attributes."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Do not use generic centered layouts. Keep text left-aligned.",
+    "Do not use generic SaaS gradients.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur) for the sticky nav.",
+    "You MUST NOT apply universal transition (e.g., transition: all). Add transitions for specific properties.",
+    "You MUST NOT center align the app container. Do not add `.App { text-align: center; }`.",
+    "NEVER use AI assistant Emoji characters.",
+    "Every interaction needs micro-animations - hover states, transitions.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, custom cursors, and loading animations separate good from extraordinary.",
+    "Never use placeholder images; use the provided Unsplash/Pexels URLs."
+  ]
+}
