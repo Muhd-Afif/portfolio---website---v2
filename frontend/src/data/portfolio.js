@@ -59,8 +59,8 @@ export const projects = [
       "A cohesive interactive documentary that reimagines regional tourism content — merging film, spatial media and AR into one guided experience.",
     gallery: [
       "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/idbvq6ko_Screenshot%20%2849%29.png",
-      "https://images.unsplash.com/photo-1682897207869-567469e1cb1a?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
-      "https://images.pexels.com/photos/7519263/pexels-photo-7519263.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
+      "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/nk6gftcc_Tanjung%20emas.png",
+      "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/caawx3kh_Screenshot%20%2850%29.png",
     ],
   },
   {
