@@ -43,7 +43,7 @@ export const Navbar = () => {
           <img
             src={profile.logo}
             alt="AFIF logo"
-            className="h-10 w-auto object-contain invert mix-blend-screen md:h-11"
+            className="h-10 w-auto object-contain md:h-11"
           />
         </button>
 

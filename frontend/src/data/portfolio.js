@@ -3,7 +3,7 @@
 export const profile = {
   name: "Muhammad Afif",
   initials: "AFIF.",
-  logo: "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/ncoxcz2d_-bkp4CKEr8l78G2E0aDDjkLtyyx5yjo53sPhD5eM4grcN_ETyOhTdnvCTA4ugLHtpB-RgZjNe-8YpmoKxzewP1aIt3QeVRCeVRIzce2zU8u4GqjeFGAsVQaWEdIwDiiVdWDo6G35lkfIDLp4Mw-QP_F6njYt7AKVoTI3fBDrKBrThk_lA6N33EJ93bLWfFS2.jfif",
+  logo: "/afif-logo.png",
   role: "Interactive Multimedia Student",
   statement:
     "Creating visual experiences through design, motion and interactive media.",

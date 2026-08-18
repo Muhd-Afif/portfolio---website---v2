@@ -119,6 +119,14 @@ export const Hero = () => {
               className="h-full w-full object-cover opacity-80"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
+            {/* Centered brand mark */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <img
+                src={profile.logo}
+                alt="AFIF logo"
+                className="h-28 w-auto object-contain opacity-90 md:h-40"
+              />
+            </div>
             {/* Rotating wireframe accent */}
             <motion.div
               animate={{ rotate: 360 }}
