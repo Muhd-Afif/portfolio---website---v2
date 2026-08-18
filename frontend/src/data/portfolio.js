@@ -3,18 +3,20 @@
 export const profile = {
   name: "Muhammad Afif",
   initials: "AFIF.",
+  logo: "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/ncoxcz2d_-bkp4CKEr8l78G2E0aDDjkLtyyx5yjo53sPhD5eM4grcN_ETyOhTdnvCTA4ugLHtpB-RgZjNe-8YpmoKxzewP1aIt3QeVRCeVRIzce2zU8u4GqjeFGAsVQaWEdIwDiiVdWDo6G35lkfIDLp4Mw-QP_F6njYt7AKVoTI3fBDrKBrThk_lA6N33EJ93bLWfFS2.jfif",
   role: "Interactive Multimedia Student",
   statement:
     "Creating visual experiences through design, motion and interactive media.",
   description:
     "An Interactive Multimedia student passionate about graphic design, video editing, motion graphics and immersive digital experiences.",
-  email: "hello@muhammadafif.com",
-  linkedin: "https://linkedin.com/in/muhammadafif",
-  linkedinLabel: "linkedin.com/in/muhammadafif",
+  email: "afifadam10@gmail.com",
+  linkedin: "https://www.linkedin.com/in/muhd-afif-768978227",
+  linkedinLabel: "linkedin.com/in/muhd-afif",
   location: "Kuala Lumpur, Malaysia",
-  resumeUrl: "/resume-muhammad-afif.pdf",
+  resumeUrl:
+    "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/of2mrmzh_Resume%20%28MUHAMMAD%20AFIF%20BIN%20AZHAR%29.pdf",
   portrait:
-    "https://images.pexels.com/photos/32321512/pexels-photo-32321512.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1200&w=940",
+    "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/86aottn3_WhatsApp%20Image%202026-07-31%20at%209.14.55%20AM.jpeg",
   heroVisual:
     "https://images.pexels.com/photos/29652327/pexels-photo-29652327.jpeg?auto=compress&cs=srgb&dpr=2&h=1400&w=1000",
 };
@@ -217,11 +219,18 @@ export const software = [
 
 export const education = [
   {
-    degree: "Bachelor of Interactive Multimedia",
-    school: "UniKL MIIT",
+    degree: "Bachelor of Multimedia Technology (Hons.) — Interactive Multimedia Design",
+    school: "Universiti Kuala Lumpur (MIIT)",
     period: "Present",
     description:
       "Studying interactive multimedia with a focus on digital design, video production, interactive media and emerging technologies — building a foundation that spans both creative craft and technical execution.",
+  },
+  {
+    degree: "Diploma in Multimedia",
+    school: "Kolej Poly-Tech MARA",
+    period: "Completed",
+    description:
+      "Built core multimedia skills across graphic design, video editing and content creation using the Adobe Creative Suite, Canva and CapCut.",
   },
 ];
 

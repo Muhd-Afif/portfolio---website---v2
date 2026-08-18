@@ -37,9 +37,14 @@ export const Navbar = () => {
         <button
           data-testid="nav-logo"
           onClick={() => go("#home")}
-          className="font-display text-xl font-bold tracking-tight text-white transition-opacity hover:opacity-70"
+          className="flex items-center transition-opacity hover:opacity-70"
+          aria-label="Muhammad Afif — home"
         >
-          {profile.initials}
+          <img
+            src={profile.logo}
+            alt="AFIF logo"
+            className="h-10 w-auto object-contain invert mix-blend-screen md:h-11"
+          />
         </button>
 
         <div className="hidden items-center gap-10 md:flex">
