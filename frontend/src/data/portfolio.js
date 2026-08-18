@@ -45,7 +45,8 @@ export const projects = [
     description:
       "An interactive multimedia documentary promoting Muar's cultural heritage and tourism through drone cinematography, 360° video and augmented reality.",
     image:
-      "https://images.unsplash.com/photo-1785420668786-8cd760202cb0?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+      "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/idbvq6ko_Screenshot%20%2849%29.png",
+    video: "https://www.youtube.com/embed/G1pSbhbDWUI",
     overview:
       "Muar River Cruise is an immersive documentary experience that invites viewers to explore the cultural heritage along Malaysia's Muar River. Combining aerial cinematography, spherical 360° footage and layered AR annotations, it reframes a traditional tourism film as something you can step inside.",
     objective:
@@ -57,7 +58,7 @@ export const projects = [
     outcome:
       "A cohesive interactive documentary that reimagines regional tourism content — merging film, spatial media and AR into one guided experience.",
     gallery: [
-      "https://images.unsplash.com/photo-1785420668786-8cd760202cb0?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+      "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/idbvq6ko_Screenshot%20%2849%29.png",
       "https://images.unsplash.com/photo-1682897207869-567469e1cb1a?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
       "https://images.pexels.com/photos/7519263/pexels-photo-7519263.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
     ],

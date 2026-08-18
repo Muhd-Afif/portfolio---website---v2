@@ -127,6 +127,27 @@ export const ProjectDetail = ({ project, onClose }) => {
               </aside>
             </div>
 
+            {/* Video */}
+            {project.video && (
+              <div className="mt-20">
+                <h4 className="mb-8 text-xs font-bold uppercase tracking-[0.25em] text-zinc-500">
+                  Project Video
+                </h4>
+                <div className="aspect-video w-full overflow-hidden border border-white/10 bg-black">
+                  <iframe
+                    src={project.video}
+                    title={`${project.title} video`}
+                    className="h-full w-full"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    data-testid="project-video"
+                  />
+                </div>
+              </div>
+            )}
+
             {/* Gallery */}
             <div className="mt-20">
               <h4 className="mb-8 text-xs font-bold uppercase tracking-[0.25em] text-zinc-500">
