@@ -168,7 +168,7 @@ export const projects = [
   {
     id: "poster-design",
     index: "06",
-    title: "Poster Design",
+    title: "Graphic Design",
     category: "Graphic Design",
     year: "2022",
     description:
