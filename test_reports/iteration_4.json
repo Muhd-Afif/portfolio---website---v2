@@ -1,0 +1,38 @@
+{
+  "summary": "Full regression of the black+blue premium upgrade. BACKEND: pytest /app/backend/tests/test_contact_api.py 5/5 PASS against public URL (GET /api/, POST /api/contact + GET persistence, 422 on invalid email, 422 on empty fields, resume PDF served). FRONTEND (public preview URL, desktop 1440/1920, tablet 768, mobile 390): 0 console errors, 0 page errors, ZERO horizontal overflow at all three breakpoints (scrollWidth == clientWidth). HERO: eyebrow 'Muhd Afif — Interactive Multimedia Student', hero-title = 'Multimedia Designer' (CSS-uppercased, two mask lines), hero-view-work scrolls to #work (scrollY 2050), hero-download-resume is an <a target=_blank> to the https resume PDF, 'Scroll to Explore' cue visible on desktop. NAVBAR: sticky; after scroll gains bg-[#050505]/70 + backdrop-blur-xl + blue border. All 5 nav links smooth-scroll; scroll-spy verified EXCLUSIVE - scrolling to about/work/skills/contact underlines exactly one link (About/Work/Skills/Contact) with blue underline at full width. nav-lets-talk scrolls to #contact. Tablet 768 correctly shows the desktop nav (md breakpoint) and hides the hamburger; mobile 390 hamburger opens/closes, nav-mobile-link-work and nav-mobile-lets-talk both navigate and close the menu. CUSTOM CURSOR: desktop only - element present, body cursor 'none', body.hide-cursor set, pointer-events:none; on hovering a project card the variant switches to 'view' (76px ring with 'VIEW' text). At 768 and 390 there is NO cursor element, hide-cursor absent, body cursor 'auto', and elementFromPoint over a card returns the card's own overlay (nothing intercepting taps) - mobile/tablet clicks open the modal fine. SELECTED WORK: exactly 4 projects (muar-river-cruise, ar-cooking-guide, nacho-macho, poster-design). Hover gives real 3D tilt (matrix3d on card), image zoom (scale 1.048), blue border glow and arrow badge. All 4 modals open + close via project-detail-close, body overflow lock released each time; Muar still renders project-video, gallery images all load (naturalWidth>0: 4/4/3/4). Modals also open/close correctly at 768 and 390. SKILLS: skill-group-design/video/interactive all present; 8 software cards (photoshop, illustrator, premiere-pro, after-effects, figma, unity, indesign, canva). EDUCATION: 2 education-item. RESUME CTA: heading \"Let's create something exceptional.\", resume-cta-download <a target=_blank> to resume URL. CONTACT: heading 'Let's Work Together.'; contact-email/linkedin/resume/location all render; empty submit shows error toast 'Please fill in all fields.' and issues NO POST; filled submit POSTs to /api/contact, shows success toast and clears the form (verified on both desktop and mobile). FOOTER: logo, 'Multimedia Designer', Email/LinkedIn/Resume, '© 2026 Muhd Afif'. Scroll reveals fire (skill groups reach opacity 1 on enter). No blocking issues found.",
+  "backend_issues": { "critical": [], "minor": [] },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {
+        "screen": "Anchor scrolling (all sections)",
+        "issues": ["useScrollTo lands sections at top = 72px while the navbar is 80px tall (h-20), so the top ~8px of a section sits behind the translucent header. Barely visible because of the blur, but bumping the offset to 80-96 would be cleaner."]
+      },
+      {
+        "screen": "Carry-overs from earlier iterations (unchanged, cosmetic)",
+        "issues": ["Graphic Design desktop masonry (lg:columns-3) is lopsided with only 4 posters.", "Graphic Design hero poster is duplicated as gallery item 1.", "Resume PDF filename still reads 'MUHAMMAD AFIF BIN AZHAR' while the site brands 'Muhd Afif'."]
+      }
+    ]
+  },
+  "test_report_links": ["/app/backend/tests/test_contact_api.py", "/app/test_reports/pytest/pytest_results.xml"],
+  "action_items": [
+    "No functional fixes required - the black+blue upgrade preserved all content, testids, routes and the contact integration.",
+    "Optional: increase the scroll-to offset from 72 to >=80 so section tops are not tucked under the 80px navbar.",
+    "Optional carry-overs: rebalance the 4-poster desktop masonry, de-duplicate hero/gallery[0], rename the resume PDF."
+  ],
+  "critical_code_review_comments": [
+    "ProjectDetail still reads project.gallery / project.tools unconditionally - a future project missing either key will throw. Add optional chaining with [] fallback.",
+    "CustomCursor computes 'fine pointer && innerWidth>=1024' once on mount with no resize listener; resizing a desktop window below 1024 keeps the custom cursor active (and vice versa). Add a resize/matchMedia change listener if that matters.",
+    "Magnetic wraps CTAs in a motion.div; it is inline-block only where a className is passed (ResumeCTA). In Hero the wrappers are block-level divs inside a flex row so it works, but passing an explicit class keeps intent obvious.",
+    "useActiveSection only sets on isIntersecting and never clears, so the last matched id persists in the dead zones between sections - acceptable behaviour, but a single-active reduce over entries would be more deterministic."
+  ],
+  "updated_files": [],
+  "success_rate": { "backend": "100% (5/5)", "frontend": "100% of requested checks passed" },
+  "seed_data_creation": "Two contact messages posted for integration verification: TEST_QA/qa_test@example.com (desktop) and TEST_Mobile/qa_mobile@example.com (mobile), plus TEST_User from pytest.",
+  "should_call_test_agent_after_fix": false,
+  "should_main_agent_self_test": true,
+  "test_credentials": "None required - public portfolio, no auth. /app/memory/test_credentials.md not needed.",
+  "context_for_next_testing_agent": "Iteration 4 verified the premium black+blue upgrade end to end. Everything in the review request passes; only cosmetic items remain (scroll offset 72 vs 80px navbar, 4-poster masonry balance, hero/gallery duplication, resume PDF filename). Useful techniques: read computed width of the nav button's inner <span> to detect the active blue underline; read document.querySelector('.mix-blend-difference') plus body.classList.contains('hide-cursor') to assert the custom cursor is desktop-only; use elementFromPoint at the card centre on mobile to prove nothing intercepts taps; the desktop nav (not the hamburger) is what shows at exactly 768px.",
+  "rca_of_the_issue": "N/A - no defects reproduced."
+}

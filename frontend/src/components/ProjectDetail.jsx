@@ -38,14 +38,15 @@ export const ProjectDetail = ({ project, onClose }) => {
           data-testid="project-detail"
           className="fixed inset-0 z-[110] overflow-y-auto bg-[#050505]"
         >
-          <div className="sticky top-0 z-10 flex items-center justify-between border-b border-white/10 bg-black/70 px-6 py-5 backdrop-blur-xl md:px-12 lg:px-20">
-            <span className="font-display text-sm text-zinc-400">
+          <div className="sticky top-0 z-10 flex items-center justify-between border-b border-[#2563FF]/15 bg-[#050505]/70 px-6 py-5 backdrop-blur-xl md:px-12 lg:px-20">
+            <span className="font-display text-sm text-[#94A3B8]">
               {project.index} — {project.title}
             </span>
             <button
               onClick={onClose}
               data-testid="project-detail-close"
-              className="group flex items-center gap-2 text-sm text-zinc-400 transition-colors hover:text-white"
+              data-cursor="hover"
+              className="group flex items-center gap-2 text-sm text-[#94A3B8] transition-colors hover:text-[#00A8FF]"
             >
               Close
               <X className="h-5 w-5 transition-transform duration-300 group-hover:rotate-90" />

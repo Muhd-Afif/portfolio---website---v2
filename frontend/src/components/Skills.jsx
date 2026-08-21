@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import { skills, software } from "@/data/portfolio";
 import { fadeUp, stagger, viewportOnce } from "@/lib/motion";
 
@@ -17,11 +18,11 @@ export const Skills = () => {
           viewport={viewportOnce}
           className="mb-20 max-w-3xl"
         >
-          <span className="mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-zinc-500">
-            <span className="inline-block h-px w-8 bg-zinc-600" />
+          <span className="mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#94A3B8]">
+            <span className="inline-block h-px w-8 bg-[#2563FF]" />
             03 — Skills
           </span>
-          <h2 className="font-display text-4xl font-bold tracking-tight text-white md:text-6xl">
+          <h2 className="font-display text-4xl font-bold tracking-tight text-[#F5F7FA] md:text-6xl">
             Skills &amp; Tools
           </h2>
         </motion.div>
@@ -37,19 +38,19 @@ export const Skills = () => {
             <motion.div
               key={group.category}
               variants={fadeUp}
-              className="border-t border-white/10 pt-8"
+              className="border-t border-[#2563FF]/20 pt-8"
               data-testid={`skill-group-${group.category.toLowerCase()}`}
             >
-              <h3 className="mb-6 font-display text-xl font-semibold text-white">
+              <h3 className="mb-6 font-display text-xl font-semibold text-[#F5F7FA]">
                 {group.category}
               </h3>
               <ul className="space-y-3">
                 {group.items.map((item) => (
                   <li
                     key={item}
-                    className="flex items-center gap-3 text-lg text-zinc-400"
+                    className="flex items-center gap-3 text-lg text-[#94A3B8]"
                   >
-                    <span className="h-1 w-1 rounded-full bg-[var(--accent)]" />
+                    <span className="h-1 w-1 rounded-full bg-[#2563FF]" />
                     {item}
                   </li>
                 ))}
@@ -65,20 +66,31 @@ export const Skills = () => {
           viewport={viewportOnce}
           className="mt-20 border-t border-white/10 pt-10"
         >
-          <h3 className="mb-8 text-xs font-bold uppercase tracking-[0.25em] text-zinc-500">
+          <h3 className="mb-8 text-xs font-bold uppercase tracking-[0.25em] text-[#94A3B8]">
             Software
           </h3>
-          <div className="flex flex-wrap gap-x-10 gap-y-5">
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="show"
+            viewport={viewportOnce}
+            className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"
+          >
             {software.map((s) => (
-              <span
+              <motion.div
                 key={s}
+                variants={fadeUp}
                 data-testid={`software-${s.toLowerCase().replace(/\s+/g, "-")}`}
-                className="font-display text-2xl text-zinc-500 transition-colors duration-300 hover:text-white md:text-3xl"
+                data-cursor="hover"
+                className="group flex items-center justify-between border border-white/10 bg-[#0a1120]/40 px-5 py-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#2563FF]/60 hover:bg-[#0a1120] hover:shadow-glow"
               >
-                {s}
-              </span>
+                <span className="font-display text-base text-[#94A3B8] transition-colors duration-300 group-hover:text-[#F5F7FA] md:text-lg">
+                  {s}
+                </span>
+                <ArrowUpRight className="h-4 w-4 -translate-x-1 text-[#00A8FF] opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Mail, Linkedin, MapPin } from "lucide-react";
+import { ArrowUpRight, Mail, Linkedin, MapPin, FileText } from "lucide-react";
 import { toast } from "sonner";
 import { profile } from "@/data/portfolio";
 import { fadeUp, stagger, viewportOnce } from "@/lib/motion";
@@ -11,6 +11,7 @@ const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 const contactChannels = [
   { icon: Mail, label: "Email", value: profile.email, href: `mailto:${profile.email}` },
   { icon: Linkedin, label: "LinkedIn", value: profile.linkedinLabel, href: profile.linkedin },
+  { icon: FileText, label: "Resume", value: "View / Download", href: profile.resumeUrl },
   { icon: MapPin, label: "Location", value: profile.location, href: null },
 ];
 
@@ -39,7 +40,7 @@ export const Contact = () => {
   };
 
   const inputClass =
-    "w-full border-b border-white/15 bg-transparent py-4 text-lg text-white placeholder:text-zinc-600 transition-colors duration-300 focus:border-white focus:outline-none";
+    "w-full border-b border-white/15 bg-transparent py-4 text-lg text-[#F5F7FA] placeholder:text-[#64748b] transition-colors duration-300 focus:border-[#2563FF] focus:outline-none";
 
   return (
     <section
@@ -55,16 +56,16 @@ export const Contact = () => {
           viewport={viewportOnce}
           className="mb-20 max-w-4xl"
         >
-          <span className="mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-zinc-500">
-            <span className="inline-block h-px w-8 bg-zinc-600" />
+          <span className="mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#94A3B8]">
+            <span className="inline-block h-px w-8 bg-[#2563FF]" />
             05 — Contact
           </span>
-          <h2 className="font-display text-5xl font-bold leading-[0.95] tracking-tighter text-white md:text-7xl lg:text-8xl">
-            Let's Create
+          <h2 className="font-display text-5xl font-bold leading-[0.95] tracking-tighter text-[#F5F7FA] md:text-7xl lg:text-8xl">
+            Let's Work
             <br />
-            Something.
+            <span className="text-[#2563FF]">Together.</span>
           </h2>
-          <p className="mt-8 text-lg text-zinc-400">
+          <p className="mt-8 text-lg text-[#94A3B8]">
             Have an opportunity or want to collaborate? Get in touch.
           </p>
         </motion.div>
@@ -81,16 +82,16 @@ export const Contact = () => {
             {contactChannels.map((c) => {
               const Icon = c.icon;
               const inner = (
-                <div className="group flex items-center gap-5 border-t border-white/10 py-7">
-                  <Icon className="h-5 w-5 text-zinc-500 transition-colors duration-300 group-hover:text-[var(--accent)]" />
+                <div className="group flex items-center gap-5 border-t border-white/10 py-7 transition-colors duration-300 hover:border-[#2563FF]/40">
+                  <Icon className="h-5 w-5 text-[#94A3B8] transition-colors duration-300 group-hover:text-[#00A8FF]" />
                   <div>
-                    <div className="text-xs uppercase tracking-[0.2em] text-zinc-600">
+                    <div className="text-xs uppercase tracking-[0.2em] text-[#64748b]">
                       {c.label}
                     </div>
-                    <div className="mt-1 text-lg text-white">{c.value}</div>
+                    <div className="mt-1 text-lg text-[#F5F7FA]">{c.value}</div>
                   </div>
                   {c.href && (
-                    <ArrowUpRight className="ml-auto h-5 w-5 text-zinc-600 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-white" />
+                    <ArrowUpRight className="ml-auto h-5 w-5 text-[#94A3B8] transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#00A8FF]" />
                   )}
                 </div>
               );
@@ -101,6 +102,7 @@ export const Contact = () => {
                       href={c.href}
                       target={c.href.startsWith("http") ? "_blank" : undefined}
                       rel="noopener noreferrer"
+                      data-cursor="hover"
                       data-testid={`contact-${c.label.toLowerCase()}`}
                     >
                       {inner}
@@ -155,7 +157,8 @@ export const Contact = () => {
               type="submit"
               disabled={loading}
               data-testid="contact-submit"
-              className="group mt-2 flex items-center justify-center gap-2 bg-white px-8 py-4 text-sm font-medium text-black transition-transform duration-300 hover:-translate-y-0.5 disabled:opacity-60"
+              data-cursor="hover"
+              className="group mt-2 flex items-center justify-center gap-2 bg-[#2563FF] px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow disabled:opacity-60"
             >
               {loading ? "Sending..." : "Send Message"}
               {!loading && (

@@ -8,7 +8,7 @@ export const useScrollTo = () => {
       typeof target === "string" ? document.querySelector(target) : target;
     if (!el) return;
     if (lenis) {
-      lenis.scrollTo(el, { offset: -72, duration: 1.2 });
+      lenis.scrollTo(el, { offset: -88, duration: 1.2 });
     } else {
       el.scrollIntoView({ behavior: "smooth" });
     }

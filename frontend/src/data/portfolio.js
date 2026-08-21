@@ -196,10 +196,10 @@ export const navLinks = [
 ];
 
 export const marqueeWords = [
+  "Multimedia Designer",
+  "Motion",
+  "UI / UX",
   "Creative Design",
-  "Motion Graphics",
   "Interactive Media",
-  "Augmented Reality",
-  "Video Editing",
   "Visual Storytelling",
 ];

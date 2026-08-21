@@ -11,31 +11,37 @@ import { Education } from "@/components/Education";
 import { ResumeCTA } from "@/components/ResumeCTA";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { CustomCursor } from "@/components/CustomCursor";
+import { AmbientBackground } from "@/components/AmbientBackground";
 
 function App() {
   return (
     <ReactLenis root options={{ lerp: 0.09, smoothWheel: true }}>
-      <div className="App grain min-h-screen bg-[#050505] text-white antialiased">
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Ribbon />
-          <SelectedWork />
-          <Skills />
-          <Education />
-          <ResumeCTA />
-          <Contact />
-        </main>
-        <Footer />
+      <div className="App grain relative min-h-screen bg-[#050505] text-[#F5F7FA] antialiased">
+        <AmbientBackground />
+        <CustomCursor />
+        <div className="relative z-10">
+          <Navbar />
+          <main>
+            <Hero />
+            <About />
+            <Ribbon />
+            <SelectedWork />
+            <Skills />
+            <Education />
+            <ResumeCTA />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
         <Toaster
           theme="dark"
           position="bottom-right"
           toastOptions={{
             style: {
-              background: "#121212",
-              border: "1px solid rgba(255,255,255,0.1)",
-              color: "#fff",
+              background: "#0a1120",
+              border: "1px solid rgba(37,99,255,0.25)",
+              color: "#F5F7FA",
               borderRadius: "2px",
             },
           }}

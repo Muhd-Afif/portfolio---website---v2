@@ -15,6 +15,12 @@ module.exports = {
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        ink: '#050505',
+        'ink-blue': '#080D18',
+        blue: {
+          DEFAULT: '#2563FF',
+          bright: '#00A8FF',
+        },
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'
@@ -75,6 +81,10 @@ module.exports = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out'
+      },
+      boxShadow: {
+        glow: '0 0 40px -8px rgba(37, 99, 255, 0.55)',
+        'glow-bright': '0 0 50px -6px rgba(0, 168, 255, 0.45)'
       }
     }
   },

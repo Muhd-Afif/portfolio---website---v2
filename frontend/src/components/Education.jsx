@@ -17,11 +17,11 @@ export const Education = () => {
           viewport={viewportOnce}
           className="mb-16"
         >
-          <span className="mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-zinc-500">
-            <span className="inline-block h-px w-8 bg-zinc-600" />
+          <span className="mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#94A3B8]">
+            <span className="inline-block h-px w-8 bg-[#2563FF]" />
             04 — Education
           </span>
-          <h2 className="font-display text-4xl font-bold tracking-tight text-white md:text-6xl">
+          <h2 className="font-display text-4xl font-bold tracking-tight text-[#F5F7FA] md:text-6xl">
             Experience &amp; Education
           </h2>
         </motion.div>
@@ -34,21 +34,20 @@ export const Education = () => {
               initial="hidden"
               whileInView="show"
               viewport={viewportOnce}
-              className="group grid grid-cols-1 gap-6 border-b border-white/10 py-10 md:grid-cols-12 md:items-baseline"
+              className="group grid grid-cols-1 gap-6 border-b border-white/10 py-10 transition-colors duration-500 hover:bg-[#0a1120]/40 md:grid-cols-12 md:items-baseline"
               data-testid="education-item"
             >
-              <div className="text-sm text-zinc-500 md:col-span-2">
+              <div className="flex items-center gap-3 text-sm text-[#94A3B8] md:col-span-2">
+                <span className="h-2 w-2 rounded-full bg-[#2563FF] shadow-glow" />
                 {item.period}
               </div>
               <div className="md:col-span-4">
-                <h3 className="font-display text-2xl font-semibold text-white md:text-3xl">
+                <h3 className="font-display text-2xl font-semibold text-[#F5F7FA] md:text-3xl">
                   {item.degree}
                 </h3>
-                <p className="mt-1 text-base text-[var(--accent)]">
-                  {item.school}
-                </p>
+                <p className="mt-1 text-base text-[#2563FF]">{item.school}</p>
               </div>
-              <p className="text-base leading-relaxed text-zinc-400 md:col-span-6">
+              <p className="text-base leading-relaxed text-[#94A3B8] md:col-span-6">
                 {item.description}
               </p>
             </motion.div>

@@ -5,8 +5,12 @@
 
 :root {
   --bg: #050505;
-  --surface: #121212;
-  --accent: #3b82f6;
+  --bg-blue: #080D18;
+  --surface: #0a1120;
+  --accent: #2563FF;
+  --accent-bright: #00A8FF;
+  --text: #F5F7FA;
+  --text-dim: #94A3B8;
 }
 
 html {
@@ -55,10 +59,24 @@ body {
   background: #050505;
 }
 ::-webkit-scrollbar-thumb {
-  background: #262626;
+  background: #1e2a44;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3a3a3a;
+  background: #2563FF;
+}
+
+/* Custom cursor: hide native cursor on desktop when active */
+.hide-cursor,
+.hide-cursor a,
+.hide-cursor button,
+.hide-cursor [data-cursor],
+.hide-cursor input,
+.hide-cursor textarea {
+  cursor: none;
+}
+
+.glow-blue {
+  box-shadow: 0 0 40px -8px rgba(37, 99, 255, 0.55);
 }
 
 /* Cinematic film grain overlay */
@@ -99,13 +117,13 @@ body {
     --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 63%;
-    --accent: 217 91% 60%;
+    --accent: 223 100% 57%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62% 45%;
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 100% / 0.1;
     --input: 0 0% 100% / 0.14;
-    --ring: 217 91% 60%;
+    --ring: 223 100% 57%;
     --radius: 0.125rem;
   }
 }

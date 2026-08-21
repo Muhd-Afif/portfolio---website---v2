@@ -25,3 +25,27 @@ export const maskLine = {
 };
 
 export const viewportOnce = { once: true, margin: "-80px" };
+
+export const maskReveal = {
+  hidden: { clipPath: "inset(0 100% 0 0)", opacity: 0.4 },
+  show: {
+    clipPath: "inset(0 0% 0 0)",
+    opacity: 1,
+    transition: { duration: 0.95, ease: EASE },
+  },
+};
+
+export const scaleIn = {
+  hidden: { opacity: 0, scale: 1.06 },
+  show: { opacity: 1, scale: 1, transition: { duration: 0.9, ease: EASE } },
+};
+
+export const fadeBlur = {
+  hidden: { opacity: 0, filter: "blur(8px)", y: 20 },
+  show: {
+    opacity: 1,
+    filter: "blur(0px)",
+    y: 0,
+    transition: { duration: 0.8, ease: EASE },
+  },
+};

@@ -5,7 +5,7 @@ export const Ribbon = () => {
   return (
     <div
       data-testid="marquee"
-      className="border-y border-white/10 py-8 md:py-12"
+      className="border-y border-[#2563FF]/15 py-8 md:py-12"
       aria-hidden="true"
     >
       <Marquee speed={38} gradient={false} autoFill>
@@ -14,7 +14,7 @@ export const Ribbon = () => {
             <span className="text-stroke px-8 font-display text-5xl font-bold uppercase tracking-tight md:text-7xl lg:text-8xl">
               {w}
             </span>
-            <span className="text-2xl text-[var(--accent)] md:text-4xl">✦</span>
+            <span className="text-2xl text-[#2563FF] md:text-4xl">✦</span>
           </span>
         ))}
       </Marquee>

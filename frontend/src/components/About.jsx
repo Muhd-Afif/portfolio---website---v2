@@ -3,8 +3,8 @@ import { about, stats, profile } from "@/data/portfolio";
 import { fadeUp, stagger, viewportOnce } from "@/lib/motion";
 
 const SectionLabel = ({ children }) => (
-  <span className="mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-zinc-500">
-    <span className="inline-block h-px w-8 bg-zinc-600" />
+  <span className="mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#94A3B8]">
+    <span className="inline-block h-px w-8 bg-[#2563FF]" />
     {children}
   </span>
 );
@@ -24,7 +24,7 @@ export const About = () => {
           viewport={viewportOnce}
         >
           <SectionLabel>01 — About</SectionLabel>
-          <h2 className="font-display text-4xl font-bold tracking-tight text-white md:text-6xl">
+          <h2 className="font-display text-4xl font-bold tracking-tight text-[#F5F7FA] md:text-6xl">
             About Me
           </h2>
         </motion.div>
@@ -38,14 +38,14 @@ export const About = () => {
             viewport={viewportOnce}
             className="md:col-span-5 lg:col-span-4"
           >
-            <div className="group relative aspect-[3/4] overflow-hidden border border-white/10">
+            <div className="group relative aspect-[3/4] overflow-hidden border border-white/10 transition-colors duration-500 hover:border-[#2563FF]/50">
               <img
                 data-testid="about-portrait"
                 src={profile.portrait}
                 alt="Muhd Afif portrait"
                 className="h-full w-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/50 to-transparent" />
             </div>
           </motion.div>
 
@@ -61,7 +61,11 @@ export const About = () => {
               <motion.p
                 key={i}
                 variants={fadeUp}
-                className="mb-6 max-w-2xl text-lg leading-relaxed text-zinc-300 md:text-xl"
+                className={
+                  i === 0
+                    ? "mb-6 max-w-2xl font-display text-2xl leading-snug tracking-tight text-[#F5F7FA] md:text-3xl"
+                    : "mb-6 max-w-2xl text-lg leading-relaxed text-[#94A3B8] md:text-xl"
+                }
               >
                 {p}
               </motion.p>
@@ -73,11 +77,11 @@ export const About = () => {
               data-testid="about-stats"
             >
               {stats.map((s) => (
-                <div key={s.label} className="border-l border-white/20 pl-4">
-                  <div className="font-display text-4xl font-bold tracking-tight text-white md:text-5xl">
+                <div key={s.label} className="border-l border-[#2563FF]/40 pl-4">
+                  <div className="font-display text-4xl font-bold tracking-tight text-[#F5F7FA] md:text-5xl">
                     {s.value}
                   </div>
-                  <div className="mt-2 text-xs uppercase tracking-wide text-zinc-500">
+                  <div className="mt-2 text-xs uppercase tracking-wide text-[#94A3B8]">
                     {s.label}
                   </div>
                 </div>
