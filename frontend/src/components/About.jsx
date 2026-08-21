@@ -42,7 +42,7 @@ export const About = () => {
               <img
                 data-testid="about-portrait"
                 src={profile.portrait}
-                alt="Muhammad Afif portrait"
+                alt="Muhd Afif portrait"
                 className="h-full w-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/40 to-transparent" />

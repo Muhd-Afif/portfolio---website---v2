@@ -53,7 +53,7 @@ export const Hero = () => {
           </motion.p>
 
           <h1 className="font-display text-6xl font-bold leading-[0.95] tracking-tighter text-white sm:text-7xl lg:text-[7.5rem]">
-            <MaskLine i={0}>Muhammad</MaskLine>
+            <MaskLine i={0}>Muhd</MaskLine>
             <MaskLine i={1}>Afif</MaskLine>
           </h1>
 

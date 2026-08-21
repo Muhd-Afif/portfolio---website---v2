@@ -31,7 +31,7 @@ const ProjectItem = ({ project, onOpen, alignDown }) => {
           <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center rounded-full bg-white opacity-0 transition-all duration-500 group-hover:opacity-100">
             <ArrowUpRight className="h-5 w-5 text-black transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </div>
-          <span className="absolute left-5 top-5 font-display text-sm font-medium text-white/70">
+          <span className="absolute left-4 top-4 rounded-sm bg-black/40 px-2 py-1 font-display text-sm font-medium text-white backdrop-blur-sm">
             {project.index}
           </span>
         </div>

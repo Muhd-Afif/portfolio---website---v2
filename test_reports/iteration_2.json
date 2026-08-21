@@ -1,0 +1,36 @@
+{
+  "summary": "Frontend-only verification of the rename ('Muhd Afif') and project-removal changes, plus contact API regression. Desktop (1920x1080) and mobile (390x844) tested on the public preview URL. All 6 requested items PASS: hero shows 'Muhd'/'Afif', About intro + footer (c) 2026 Muhd Afif, zero occurrences of 'Muhammad' in rendered text, Selected Work has exactly 4 projects numbered 01-04 (Muar River Cruise, AR Cooking Guide, Nacho Macho, Graphic Design) with 'Discovering Insects' and 'Travel Magazine' fully gone (also no source leftovers via grep), all 4 detail overlays open with full content (Overview/Objective/Process/Outcome/My Role/Tools Used/Project Gallery) and close via project-detail-close, Muar detail renders YouTube iframe (project-video, src .../embed/G1pSbhbDWUI) with exactly 3 gallery images, About stats shows '04+ SELECTED PROJECTS', page scrolls end-to-end (7808/7808px, footer visible), and contact form POST returns success toast 'Message sent. Thanks for reaching out...'. Backend contact suite 5/5 passed. No console errors, no error elements, body scroll-lock correctly released after modal close.",
+  "backend_issues": { "critical": [], "minor": [] },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {
+        "screen": "Selected Work cards (mobile 390px)",
+        "issues": ["Project index badge (text-white/70) sits over bright imagery on card 01 (Muar sky) and is effectively unreadable; badges over dark images (e.g. 02) read fine. Consider a scrim/backdrop or solid colour behind the number."]
+      },
+      {
+        "screen": "Hero / Resume CTA",
+        "issues": ["profile.resumeUrl asset filename still contains 'MUHAMMAD AFIF BIN AZHAR', so the downloaded file is named with the old name even though all on-page text is now 'Muhd Afif'. Cosmetic-only; requires re-uploading the PDF to fully align with the rename."]
+      }
+    ]
+  },
+  "test_report_links": ["/app/backend/tests/test_contact_api.py", "/app/test_reports/pytest/pytest_results.xml"],
+  "action_items": [
+    "Optional: improve contrast of the project index badge over light card images (mobile).",
+    "Optional: re-upload resume PDF with a 'Muhd Afif' filename so the download matches the new name."
+  ],
+  "critical_code_review_comments": [
+    "portfolio.js is the single source of truth and is consistent: projects array has 4 items with sequential index 01-04, stats[0] = '04+', profile.name = 'Muhd Afif'. No orphaned ids referenced elsewhere.",
+    "ProjectDetail unconditionally reads project.gallery/project.tools; both are present for all 4 projects today, but adding a future project without these keys would throw. Consider optional chaining with a fallback array.",
+    "Detail modal labels are uppercased via CSS text-transform, so automated text assertions must be case-insensitive (noted for future test agents)."
+  ],
+  "updated_files": [],
+  "success_rate": { "backend": "100%", "frontend": "100%" },
+  "seed_data_creation": "One contact message created via UI (name 'TEST_QA Afif', qa_test@example.com) plus records from the backend pytest suite.",
+  "should_call_test_agent_after_fix": false,
+  "should_main_agent_self_test": true,
+  "test_credentials": "None required - public single-page portfolio, no auth (per /app/memory/test_credentials.md).",
+  "context_for_next_testing_agent": "All rename + project-removal changes verified on desktop and mobile; nothing broken. Reuse /app/backend/tests/test_contact_api.py for backend regression. When asserting detail-modal section labels, use case-insensitive matching (CSS uppercases 'TOOLS USED', 'PROJECT GALLERY', stat labels). Gallery image counts: Muar 3, AR Cooking 3, Nacho 2, Graphic Design 2; only Muar has a video iframe. Two open cosmetic items: mobile index-badge contrast and the resume PDF filename still containing the old name.",
+  "rca_of_the_issue": "Initial run showed 5 apparent failures (About stats + all 4 project details). RCA: these were false negatives in my own test script - assertions used case-sensitive substrings ('Selected Projects', 'Tools Used', 'Project Gallery') while the UI uppercases those labels via CSS text-transform, which is reflected in inner_text(). Re-running with case-insensitive matching produced 100% pass. No application defect."
+}

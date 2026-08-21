@@ -38,7 +38,7 @@ export const Navbar = () => {
           data-testid="nav-logo"
           onClick={() => go("#home")}
           className="flex items-center transition-opacity hover:opacity-70"
-          aria-label="Muhammad Afif — home"
+          aria-label="Muhd Afif — home"
         >
           <img
             src={profile.logo}

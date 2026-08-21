@@ -17,7 +17,7 @@ export const Footer = () => {
           {profile.initials}
         </button>
         <p className="text-sm text-zinc-500">Interactive Multimedia Student</p>
-        <p className="text-sm text-zinc-600">© 2026 Muhammad Afif</p>
+        <p className="text-sm text-zinc-600">© 2026 Muhd Afif</p>
       </div>
     </footer>
   );

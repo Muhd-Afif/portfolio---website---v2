@@ -1,7 +1,7 @@
 // All portfolio content lives here — easy to edit/replace later.
 
 export const profile = {
-  name: "Muhammad Afif",
+  name: "Muhd Afif",
   initials: "AFIF.",
   logo: "/afif-logo.png",
   role: "Interactive Multimedia Student",
@@ -22,7 +22,7 @@ export const profile = {
 };
 
 export const stats = [
-  { value: "06+", label: "Selected Projects" },
+  { value: "04+", label: "Selected Projects" },
   { value: "05+", label: "Creative Tools" },
   { value: "01", label: "Multimedia Student" },
 ];
@@ -30,7 +30,7 @@ export const stats = [
 export const about = {
   title: "About Me",
   paragraphs: [
-    "I'm Muhammad Afif, an Interactive Multimedia student who lives at the intersection of visual communication and technology. My work spans digital design, video production and interactive experiences.",
+    "I'm Muhd Afif, an Interactive Multimedia student who lives at the intersection of visual communication and technology. My work spans digital design, video production and interactive experiences.",
     "I care about clarity, rhythm and craft — whether that's a 360° documentary, an augmented reality book, or a single carefully composed poster. I'm driven by the challenge of turning ideas into experiences people can feel.",
   ],
 };
@@ -64,34 +64,8 @@ export const projects = [
     ],
   },
   {
-    id: "discovering-insects",
-    index: "02",
-    title: "Discovering Insects",
-    category: "AR / Interactive Children's Book",
-    year: "2024",
-    description:
-      "An interactive AR children's book designed to introduce children to insects through animated digital experiences.",
-    image:
-      "https://images.unsplash.com/photo-1676668078714-4ed10b15e882?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
-    overview:
-      "Discovering Insects turns the pages of a printed children's book into a launchpad for animated AR creatures. Point a device at an illustration and the insect comes alive — moving, buzzing and explaining itself to young readers.",
-    objective:
-      "Make early science education playful and memorable by pairing tactile print with responsive digital animation.",
-    role: "Illustration direction, 3D/animation, AR marker design and interaction flow.",
-    tools: ["Unity", "Adobe Illustrator", "Adobe Photoshop", "Adobe After Effects"],
-    process:
-      "Designed printable illustrations as AR markers, modelled and animated each insect, then wired up an intuitive tap-to-learn interaction so children can explore at their own pace.",
-    outcome:
-      "A hybrid print + AR learning tool that makes discovering insects delightful and interactive for children.",
-    gallery: [
-      "https://images.unsplash.com/photo-1676668078714-4ed10b15e882?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
-      "https://images.pexels.com/photos/38839922/pexels-photo-38839922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
-      "https://images.pexels.com/photos/760031/pexels-photo-760031.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
-    ],
-  },
-  {
     id: "ar-cooking-guide",
-    index: "03",
+    index: "02",
     title: "AR Cooking Guide",
     category: "Augmented Reality / Interactive Media",
     year: "2024",
@@ -117,7 +91,7 @@ export const projects = [
   },
   {
     id: "nacho-macho",
-    index: "04",
+    index: "03",
     title: "Nacho Macho",
     category: "Branding / Marketing / Business",
     year: "2023",
@@ -141,33 +115,8 @@ export const projects = [
     ],
   },
   {
-    id: "travel-magazine",
-    index: "05",
-    title: "Travel Magazine",
-    category: "Editorial Design / Layout",
-    year: "2023",
-    description:
-      "A 30-page travel magazine project focused on editorial layout, typography, photography and visual storytelling.",
-    image:
-      "https://images.pexels.com/photos/8084481/pexels-photo-8084481.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1000&w=1600",
-    overview:
-      "A 30-page travel magazine built from the ground up — establishing a grid, type system and photographic language that carries a reader through destinations with rhythm and pace.",
-    objective:
-      "Demonstrate command of editorial design: hierarchy, typography, white space and long-form visual storytelling.",
-    role: "Art direction, layout, typography and image treatment.",
-    tools: ["Adobe InDesign", "Adobe Photoshop", "Adobe Illustrator"],
-    process:
-      "Defined a flexible baseline grid and typographic scale, curated photography, and composed spreads that balance imagery, pull quotes and body copy across the full 30 pages.",
-    outcome:
-      "A polished, print-ready magazine that reads with the confidence of a professional publication.",
-    gallery: [
-      "https://images.pexels.com/photos/8084481/pexels-photo-8084481.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1000&w=1600",
-      "https://images.pexels.com/photos/23436817/pexels-photo-23436817.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
-    ],
-  },
-  {
     id: "poster-design",
-    index: "06",
+    index: "04",
     title: "Graphic Design",
     category: "Graphic Design",
     year: "2022",
