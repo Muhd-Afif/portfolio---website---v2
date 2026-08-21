@@ -1,0 +1,38 @@
+{
+  "summary": "Frontend-only verification of the new 'poster' galleryLayout for the Graphic Design project (poster-design) plus regression on the other 3 projects. Tested on the public preview URL at desktop 1920x1080, tablet 768x1024 and mobile 390x844. ALL requested items PASS. (1) project-open-poster-design opens data-testid=project-detail. (2) Project Gallery renders exactly FOUR <img>, all loaded (naturalWidth>0): coffee 'BREWED FOR THE MOMENT' (1080x1350), Onitsuka Tiger 'KILL BILL' (1080x1350), white Myvi 'BORN TO STAND OUT' (1170x1554), sneaker 'MOVE DIFFERENT' (1080x1350). All object-fit:contain and NOT cropped/stretched - rendered aspect ratio matches natural AR to within 0.001-0.002 for every image at every breakpoint (e.g. 0.800 natural vs 0.800 rendered; Myvi 0.753 vs 0.754). Container class 'sm:columns-2 lg:columns-3' resolves to computed columnCount 3 (desktop), 2 (tablet), auto/1 (mobile) - masonry works. (3) HERO image is the portrait coffee poster, object-fit:contain, max-h-[80vh] w-auto inside a flex-centered #0a0a0a box, rendered 691x864 = AR 0.800 exactly matching source; NOT cropped to 16:9. (4) Regression: muar-river-cruise, ar-cooking-guide and nacho-macho all still open with the ORIGINAL landscape grid ('grid grid-cols-1 gap-4 md:grid-cols-2'), first gallery slot aspect 1.78 (16:9) and full-width, remaining slots 4:3, ALL images object-fit:cover, hero still 16:9 object-cover, image counts unchanged (3/3/2). Muar still renders data-testid=project-video (YouTube iframe); the other two correctly have none. (5) project-detail-close closes the Graphic Design modal and body overflow lock is released (''). (6) Page scrolls end-to-end (scrollY 3486 -> 7834), 0 error elements, 0 console errors, 0 page errors across all three viewports.",
+  "backend_issues": { "critical": [], "minor": [] },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {
+        "screen": "Graphic Design detail - Project Gallery (desktop >=1024px, lg:columns-3)",
+        "issues": ["With 4 posters in 3 balanced columns the layout is lopsided: column 1 stacks 2 posters while columns 2 and 3 hold 1 each, leaving a large empty area under the right two columns. Cosmetic only and it will self-resolve at 6/9 posters, but if the series stays at 4/5 items consider keeping lg:columns-2 (which looks well balanced, as verified on tablet) or switching to a responsive count based on gallery.length."]
+      },
+      {
+        "screen": "Graphic Design detail - hero vs gallery",
+        "issues": ["The coffee poster is used both as the hero image and as gallery item 1, so the same large portrait poster appears twice within one scroll. This matches the existing pattern for the other 3 projects, but it is far more noticeable with the tall poster layout. Consider skipping gallery[0] when it equals project.image for the poster layout."]
+      }
+    ]
+  },
+  "test_report_links": ["/app/backend/tests/test_contact_api.py"],
+  "action_items": [
+    "No functional fixes required - the poster galleryLayout works exactly as specified and the other 3 projects are unaffected.",
+    "Optional polish: rebalance the desktop masonry (lg:columns-2 or length-aware column count) so 4 posters do not leave two short columns.",
+    "Optional polish: de-duplicate the hero poster from gallery[0] in the poster layout."
+  ],
+  "critical_code_review_comments": [
+    "ProjectDetail.jsx now branches on project.galleryLayout === 'poster' in two places (hero wrapper/img classes and gallery container). The flag is read defensively (undefined falls through to the default grid), so adding new projects without the flag is safe.",
+    "Gallery posters use loading=\"lazy\" but the hero does not; that is the right split, though the hero poster is a 1080x1350 JPEG served full-size - consider width/height attributes on the hero img to avoid layout shift while it decodes.",
+    "Still open from iteration 2: ProjectDetail unconditionally reads project.gallery and project.tools; a future project missing either key will throw. Optional chaining with a [] fallback is cheap insurance.",
+    "Detail-modal section labels remain CSS-uppercased (text-transform), so text assertions must stay case-insensitive."
+  ],
+  "updated_files": [],
+  "success_rate": { "backend": "not tested (frontend-only request)", "frontend": "100%" },
+  "seed_data_creation": "None - no forms submitted this iteration.",
+  "should_call_test_agent_after_fix": false,
+  "should_main_agent_self_test": true,
+  "test_credentials": "None required - public portfolio, no auth.",
+  "context_for_next_testing_agent": "Poster layout verified at 1920/768/390. Current gallery counts: Muar 3 (has project-video), AR Cooking 3, Nacho 2, Graphic Design 4 (poster/masonry layout, object-contain). Reliable technique used: locate the h4 whose text lowercases to 'project gallery' and read h4.nextElementSibling as the gallery container, then compare each img naturalWidth/naturalHeight against getBoundingClientRect ratio to prove no crop/stretch. Labels are CSS-uppercased - always match case-insensitively. Only cosmetic items remain (desktop masonry balance with 4 items, hero/gallery[0] duplication) plus the two carry-overs from iteration 2 (mobile project index badge contrast, resume PDF filename still says MUHAMMAD AFIF BIN AZHAR).",
+  "rca_of_the_issue": "N/A - no defects reproduced. The galleryLayout:'poster' flag correctly drives object-contain + masonry columns for the Graphic Design project while all other projects continue to use the original 16:9/4:3 object-cover grid."
+}

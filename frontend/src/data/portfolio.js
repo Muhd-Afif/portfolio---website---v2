@@ -118,25 +118,28 @@ export const projects = [
     id: "poster-design",
     index: "04",
     title: "Graphic Design",
-    category: "Graphic Design",
-    year: "2022",
+    category: "Graphic Design / Advertising",
+    year: "2024",
+    galleryLayout: "poster",
     description:
-      "A collection of promotional poster experiments created to explore composition, typography, imagery and visual hierarchy.",
+      "A collection of self-initiated advertising posters exploring composition, typography, product photography and visual hierarchy.",
     image:
-      "https://images.unsplash.com/photo-1669909625629-c341fa2d2822?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+      "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/8bnrh4xd_Coffee%20Advertisement%20%E2%80%94%20Self-Initiated%20Project.jpg",
     overview:
-      "A series of poster studies pushing composition, type and imagery in different directions — a sandbox for developing a personal graphic voice.",
+      "A growing series of self-initiated advertising posters — from coffee and footwear to automotive — each pushing composition, type and product photography toward one confident visual idea.",
     objective:
-      "Experiment freely with visual hierarchy, contrast and typographic expression across a range of subjects.",
-    role: "Concept, art direction and design across the full series.",
-    tools: ["Adobe Photoshop", "Adobe Illustrator", "Figma"],
+      "Build a versatile advertising portfolio that shows range across brands and subjects while keeping a bold, cinematic visual voice.",
+    role: "Concept, art direction, retouching, layout and typography across the full series.",
+    tools: ["Adobe Photoshop", "Adobe Illustrator"],
     process:
-      "Explored multiple layouts per brief, iterated on type pairings and grids, and refined each poster toward a single confident visual idea.",
+      "For each poster: sourced or shot the product, cut and retouched it, then built a dramatic lighting treatment and typographic system that leads the eye from headline to product to tagline.",
     outcome:
-      "A versatile poster collection showing range, restraint and a strong sense of composition.",
+      "A cohesive set of premium advertising posters that read like real campaign key visuals.",
     gallery: [
-      "https://images.unsplash.com/photo-1669909625629-c341fa2d2822?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
-      "https://images.pexels.com/photos/11141530/pexels-photo-11141530.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
+      "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/8bnrh4xd_Coffee%20Advertisement%20%E2%80%94%20Self-Initiated%20Project.jpg",
+      "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/axzafc48_OnitsukaTiger%20Advertisement_Selt%20-%20Initiated%20Project.jpg",
+      "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/6bkbs91u_Photo_Manipulation.jpg",
+      "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/oyxkrqwh_Sneaker.jpg",
     ],
   },
 ];

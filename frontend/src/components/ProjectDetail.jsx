@@ -73,11 +73,21 @@ export const ProjectDetail = ({ project, onClose }) => {
               </div>
             </div>
 
-            <div className="mt-14 aspect-[16/9] overflow-hidden border border-white/10">
+            <div
+              className={`mt-14 overflow-hidden border border-white/10 ${
+                project.galleryLayout === "poster"
+                  ? "flex justify-center bg-[#0a0a0a] py-4"
+                  : "aspect-[16/9]"
+              }`}
+            >
               <img
                 src={project.image}
                 alt={project.title}
-                className="h-full w-full object-cover"
+                className={
+                  project.galleryLayout === "poster"
+                    ? "max-h-[80vh] w-auto object-contain"
+                    : "h-full w-full object-cover"
+                }
               />
             </div>
 
@@ -153,22 +163,42 @@ export const ProjectDetail = ({ project, onClose }) => {
               <h4 className="mb-8 text-xs font-bold uppercase tracking-[0.25em] text-zinc-500">
                 Project Gallery
               </h4>
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                {project.gallery.map((src, i) => (
-                  <div
-                    key={i}
-                    className={`overflow-hidden border border-white/10 ${
-                      i === 0 ? "md:col-span-2 aspect-[16/9]" : "aspect-[4/3]"
-                    }`}
-                  >
-                    <img
-                      src={src}
-                      alt={`${project.title} gallery ${i + 1}`}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
+              {project.galleryLayout === "poster" ? (
+                <div className="gap-4 [column-fill:_balance] sm:columns-2 [&>*]:mb-4">
+                  {project.gallery
+                    .filter((src) => src !== project.image)
+                    .map((src, i) => (
+                      <div
+                        key={i}
+                        className="break-inside-avoid overflow-hidden border border-white/10 bg-[#0a0a0a]"
+                      >
+                        <img
+                          src={src}
+                          alt={`${project.title} poster ${i + 1}`}
+                          loading="lazy"
+                          className="h-auto w-full object-contain"
+                        />
+                      </div>
+                    ))}
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  {project.gallery.map((src, i) => (
+                    <div
+                      key={i}
+                      className={`overflow-hidden border border-white/10 ${
+                        i === 0 ? "md:col-span-2 aspect-[16/9]" : "aspect-[4/3]"
+                      }`}
+                    >
+                      <img
+                        src={src}
+                        alt={`${project.title} gallery ${i + 1}`}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </motion.div>
         </motion.div>
