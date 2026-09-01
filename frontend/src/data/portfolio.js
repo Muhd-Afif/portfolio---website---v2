@@ -92,26 +92,83 @@ export const projects = [
   {
     id: "nacho-macho",
     index: "03",
-    title: "Nacho Macho",
-    category: "Branding / Marketing / Business",
-    year: "2023",
+    title: "Video Editing",
+    category: "Video Editing / Multimedia",
+    year: "2022–2026",
     description:
-      "A student-led food and beverage brand developed with visual branding, promotional content and social media marketing.",
-    image:
-      "https://images.pexels.com/photos/12557546/pexels-photo-12557546.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1000&w=1600",
+      "A curated collection of video editing and multimedia projects created throughout my academic journey, from Diploma to Bachelor's studies.",
+    image: "https://img.youtube.com/vi/sIMHJ_1oUk4/hqdefault.jpg",
     overview:
-      "Nacho Macho is a complete brand identity for a student-run food and beverage venture — from logo and packaging to promotional campaigns and a social presence designed to stand out in a crowded feed.",
+      "A curated collection of video editing and multimedia work produced across my Diploma and Bachelor's studies — spanning visual storytelling, film production, digital visual effects and post-production. Each piece was created for a different subject, so they are presented here as separate academic video projects under one body of work.",
     objective:
-      "Build a bold, memorable brand and drive engagement through consistent visual identity and marketing content.",
-    role: "Brand identity, packaging, social content and campaign design.",
-    tools: ["Adobe Illustrator", "Adobe Photoshop", "Canva", "Figma"],
+      "Bring my academic video work together in one place to show range across editing, storytelling, visual effects and post-production.",
+    role: "Video editing, visual storytelling, motion and post-production across all projects.",
+    tools: [
+      "Adobe Premiere Pro",
+      "Adobe After Effects",
+      "Adobe Photoshop",
+      "CapCut",
+    ],
     process:
-      "Developed a distinctive logo and colour system, applied it across packaging and menus, then produced a run of promotional posts and short-form videos tuned for social platforms.",
+      "Each project was briefed for a specific subject during my Diploma (KPTM Ipoh) and Bachelor's (UniKL MIIT) studies, then shot or sourced, edited, and finished with motion and post-production techniques.",
     outcome:
-      "A cohesive, appetising brand system that gave the venture a confident, professional presence.",
-    gallery: [
-      "https://images.pexels.com/photos/12557546/pexels-photo-12557546.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1000&w=1600",
-      "https://images.pexels.com/photos/34353943/pexels-photo-34353943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
+      "A growing showreel of academic video projects demonstrating video editing, film production, digital visual effects and post-production skills.",
+    videoProjects: [
+      {
+        title: "Final Year Project",
+        education: "Diploma in Multimedia",
+        institution: "KPTM Ipoh",
+        subject: "Final Year Project",
+        year: "2022",
+        category: "Academic Project / Final Year Project",
+        description:
+          "A final year multimedia project created during my Diploma in Multimedia studies at KPTM Ipoh.",
+        videoUrl: "https://youtu.be/sIMHJ_1oUk4?si=vSh_dPreVZrljNMs",
+      },
+      {
+        title: "Storyboard",
+        education: "Bachelor's Degree",
+        course:
+          "Bachelor of Multimedia Technology (Hons) in Interactive Multimedia Design",
+        subject: "Storyboard",
+        category: "Academic Project",
+        description:
+          "A storyboard-based multimedia project created as part of my Interactive Multimedia Design studies.",
+        videoUrl: "https://youtu.be/JjTvwI4Sdac?si=U50hxJdPF9zh02qR",
+      },
+      {
+        title: "Film & Principles",
+        education: "Bachelor's Degree",
+        course:
+          "Bachelor of Multimedia Technology (Hons) in Interactive Multimedia Design",
+        subject: "Film and Principles",
+        category: "Academic Project",
+        description:
+          "A film project created for the Film and Principles subject, focusing on visual storytelling and film production techniques.",
+        videoUrl: "https://youtu.be/9x8hURReb-Y?si=uPAzw3Zk3-FsZbGA",
+      },
+      {
+        title: "Digital Visual Effects",
+        education: "Bachelor's Degree",
+        course:
+          "Bachelor of Multimedia Technology (Hons) in Interactive Multimedia Design",
+        subject: "Digital Visual Effects",
+        category: "Academic Project",
+        description:
+          "A digital visual effects project created during my Bachelor's studies, exploring visual effects and post-production techniques.",
+        videoUrl: "https://youtu.be/VlNfv2optGo?si=HNnU_o7vS83girYW",
+      },
+      {
+        title: "Digital Post Production",
+        education: "Bachelor's Degree",
+        course:
+          "Bachelor of Multimedia Technology (Hons) in Interactive Multimedia Design",
+        subject: "Digital Post Production",
+        category: "Academic Project",
+        description:
+          "A digital post-production project created during my Bachelor's studies, focusing on editing and post-production workflow.",
+        videoUrl: "https://youtu.be/HOKzK5LDJdg?si=9VY6vzkCQJ-LZrin",
+      },
     ],
   },
   {

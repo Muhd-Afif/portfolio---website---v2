@@ -1,7 +1,16 @@
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, Play, ArrowUpRight } from "lucide-react";
 import { EASE } from "@/lib/motion";
+
+const ytId = (url = "") => {
+  const m = url.match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/);
+  return m ? m[1] : "";
+};
+const ytThumb = (url) => {
+  const id = ytId(url);
+  return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : "";
+};
 
 const DetailBlock = ({ label, children }) => (
   <div className="border-t border-white/10 py-8">
@@ -159,48 +168,124 @@ export const ProjectDetail = ({ project, onClose }) => {
               </div>
             )}
 
-            {/* Gallery */}
-            <div className="mt-20">
-              <h4 className="mb-8 text-xs font-bold uppercase tracking-[0.25em] text-zinc-500">
-                Project Gallery
-              </h4>
-              {project.galleryLayout === "poster" ? (
-                <div className="gap-4 [column-fill:_balance] sm:columns-2 [&>*]:mb-4">
-                  {project.gallery
-                    .filter((src) => src !== project.image)
-                    .map((src, i) => (
-                      <div
-                        key={i}
-                        className="break-inside-avoid overflow-hidden border border-white/10 bg-[#0a0a0a]"
-                      >
-                        <img
-                          src={src}
-                          alt={`${project.title} poster ${i + 1}`}
-                          loading="lazy"
-                          className="h-auto w-full object-contain"
-                        />
-                      </div>
-                    ))}
-                </div>
-              ) : (
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                  {project.gallery.map((src, i) => (
+            {/* Video collection */}
+            {project.videoProjects && project.videoProjects.length > 0 && (
+              <div className="mt-20">
+                <h4 className="mb-8 text-xs font-bold uppercase tracking-[0.25em] text-[#94A3B8]">
+                  Video Projects
+                </h4>
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                  {project.videoProjects.map((v, i) => (
                     <div
                       key={i}
-                      className={`overflow-hidden border border-white/10 ${
-                        i === 0 ? "md:col-span-2 aspect-[16/9]" : "aspect-[4/3]"
-                      }`}
+                      data-testid={`video-project-${i + 1}`}
+                      className="group flex flex-col border border-white/10 bg-[#0a1120]/40 transition-all duration-300 hover:-translate-y-1 hover:border-[#2563FF]/50 hover:shadow-glow"
                     >
-                      <img
-                        src={src}
-                        alt={`${project.title} gallery ${i + 1}`}
-                        className="h-full w-full object-cover"
-                      />
+                      <a
+                        href={v.videoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-cursor="hover"
+                        className="relative block aspect-video overflow-hidden"
+                        aria-label={`Watch ${v.title}`}
+                      >
+                        <img
+                          src={ytThumb(v.videoUrl)}
+                          alt={v.title}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/30 transition-colors duration-300 group-hover:bg-black/15">
+                          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#2563FF] shadow-glow transition-transform duration-300 group-hover:scale-110">
+                            <Play className="h-6 w-6 translate-x-0.5 fill-white text-white" />
+                          </span>
+                        </div>
+                        <span className="absolute left-4 top-4 rounded-sm bg-black/50 px-2 py-1 font-display text-xs font-medium text-white backdrop-blur-sm">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                      </a>
+                      <div className="flex flex-1 flex-col p-6">
+                        <div className="flex flex-wrap items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em]">
+                          <span className="text-[#2563FF]">{v.education}</span>
+                          {v.year && (
+                            <>
+                              <span className="text-[#64748b]">·</span>
+                              <span className="text-[#94A3B8]">{v.year}</span>
+                            </>
+                          )}
+                        </div>
+                        <h5 className="mt-3 font-display text-xl font-semibold text-[#F5F7FA]">
+                          {v.title}
+                        </h5>
+                        <p className="mt-1 text-sm text-[#94A3B8]">
+                          {v.institution || v.course}
+                          {v.subject ? ` — ${v.subject}` : ""}
+                        </p>
+                        <p className="mt-3 text-sm leading-relaxed text-[#94A3B8]">
+                          {v.description}
+                        </p>
+                        <a
+                          href={v.videoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          data-cursor="hover"
+                          data-testid={`watch-video-${i + 1}`}
+                          className="group/btn mt-5 inline-flex items-center gap-1.5 self-start text-sm text-[#F5F7FA] transition-colors duration-300 hover:text-[#00A8FF]"
+                        >
+                          Watch Video
+                          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                        </a>
+                      </div>
                     </div>
                   ))}
                 </div>
-              )}
-            </div>
+              </div>
+            )}
+
+            {/* Gallery */}
+            {project.gallery && project.gallery.length > 0 && (
+              <div className="mt-20">
+                <h4 className="mb-8 text-xs font-bold uppercase tracking-[0.25em] text-[#94A3B8]">
+                  Project Gallery
+                </h4>
+                {project.galleryLayout === "poster" ? (
+                  <div className="gap-4 [column-fill:_balance] sm:columns-2 [&>*]:mb-4">
+                    {project.gallery
+                      .filter((src) => src !== project.image)
+                      .map((src, i) => (
+                        <div
+                          key={i}
+                          className="break-inside-avoid overflow-hidden border border-white/10 bg-[#0a0a0a]"
+                        >
+                          <img
+                            src={src}
+                            alt={`${project.title} poster ${i + 1}`}
+                            loading="lazy"
+                            className="h-auto w-full object-contain"
+                          />
+                        </div>
+                      ))}
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                    {project.gallery.map((src, i) => (
+                      <div
+                        key={i}
+                        className={`overflow-hidden border border-white/10 ${
+                          i === 0 ? "md:col-span-2 aspect-[16/9]" : "aspect-[4/3]"
+                        }`}
+                      >
+                        <img
+                          src={src}
+                          alt={`${project.title} gallery ${i + 1}`}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
           </motion.div>
         </motion.div>
       )}
