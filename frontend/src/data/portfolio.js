@@ -22,7 +22,7 @@ export const profile = {
 };
 
 export const stats = [
-  { value: "04+", label: "Selected Projects" },
+  { value: "03+", label: "Selected Projects" },
   { value: "05+", label: "Creative Tools" },
   { value: "01", label: "Multimedia Student" },
 ];
@@ -64,34 +64,8 @@ export const projects = [
     ],
   },
   {
-    id: "ar-cooking-guide",
-    index: "02",
-    title: "AR Cooking Guide",
-    category: "Augmented Reality / Interactive Media",
-    year: "2024",
-    description:
-      "An AR-based cooking guide combining physical recipe cards with interactive digital content.",
-    image:
-      "https://images.unsplash.com/photo-1621494547944-5ddbc84514b2?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
-    overview:
-      "AR Cooking Guide bridges a set of physical recipe cards with step-by-step interactive content. Scanning a card reveals timed instructions, ingredient breakdowns and short technique clips layered over the real world.",
-    objective:
-      "Reduce friction in the kitchen by delivering guidance exactly where and when it's needed — hands-free and in context.",
-    role: "UX flow, AR content design, motion graphics and editing.",
-    tools: ["Unity", "Adobe Premiere Pro", "Adobe After Effects", "Figma"],
-    process:
-      "Mapped a cooking journey into discrete steps, designed printed cards as triggers, and produced concise motion clips that appear as overlays to guide each stage of the recipe.",
-    outcome:
-      "An engaging AR utility that makes following a recipe feel guided, modern and effortless.",
-    gallery: [
-      "https://images.unsplash.com/photo-1621494547944-5ddbc84514b2?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
-      "https://images.unsplash.com/photo-1623092242739-5a382879cec9?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
-      "https://images.pexels.com/photos/12557546/pexels-photo-12557546.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
-    ],
-  },
-  {
     id: "nacho-macho",
-    index: "03",
+    index: "02",
     title: "Video Editing",
     category: "Video Editing / Multimedia",
     year: "2022–2026",
@@ -173,7 +147,7 @@ export const projects = [
   },
   {
     id: "poster-design",
-    index: "04",
+    index: "03",
     title: "Graphic Design",
     category: "Graphic Design / Advertising",
     year: "2024",
