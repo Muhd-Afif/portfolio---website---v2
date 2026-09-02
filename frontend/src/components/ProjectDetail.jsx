@@ -281,9 +281,13 @@ export const ProjectDetail = ({ project, onClose }) => {
                   Project Gallery
                 </h4>
                 {project.galleryLayout === "poster" && project.posters?.length ? (
-                  <div className="gap-6 [column-fill:_balance] sm:columns-2 [&>*]:mb-6">
+                  <div className="gap-8 [column-fill:_balance] sm:columns-2 [&>*]:mb-10">
                     {project.posters.map((p, i) => (
-                      <figure key={i} className="group break-inside-avoid">
+                      <figure
+                        key={i}
+                        data-testid={`poster-${i + 1}`}
+                        className="group break-inside-avoid"
+                      >
                         <div className="overflow-hidden border border-white/10 bg-[#0a0a0a] transition-colors duration-300 group-hover:border-[#2563FF]/50 group-hover:shadow-glow">
                           <img
                             src={p.src}
@@ -292,13 +296,57 @@ export const ProjectDetail = ({ project, onClose }) => {
                             className="h-auto w-full object-contain"
                           />
                         </div>
-                        <figcaption className="mt-3">
-                          <span className="block text-sm font-medium text-[#F5F7FA]">
+                        <figcaption className="mt-5">
+                          <span className="block font-display text-lg font-semibold text-[#F5F7FA]">
                             {String(i + 1).padStart(2, "0")} — {p.title}
                           </span>
-                          <span className="mt-1 block text-xs text-[#94A3B8]">
-                            {p.meta}
-                          </span>
+                          {p.overview && (
+                            <p className="mt-3 text-sm leading-relaxed text-[#94A3B8]">
+                              {p.overview}
+                            </p>
+                          )}
+                          <dl className="mt-4 grid grid-cols-2 gap-x-6 gap-y-3 border-t border-white/10 pt-4">
+                            {p.type && (
+                              <div>
+                                <dt className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#64748b]">
+                                  Project Type
+                                </dt>
+                                <dd className="mt-1 text-sm text-[#F5F7FA]">
+                                  {p.type}
+                                </dd>
+                              </div>
+                            )}
+                            {p.category && (
+                              <div>
+                                <dt className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#64748b]">
+                                  Category
+                                </dt>
+                                <dd className="mt-1 text-sm text-[#F5F7FA]">
+                                  {p.category}
+                                </dd>
+                              </div>
+                            )}
+                            {p.year && (
+                              <div>
+                                <dt className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#64748b]">
+                                  Year
+                                </dt>
+                                <dd className="mt-1 text-sm text-[#F5F7FA]">
+                                  {p.year}
+                                </dd>
+                              </div>
+                            )}
+                            {p.tools?.length > 0 && (
+                              <div>
+                                <dt className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#64748b]">
+                                  Tools
+                                </dt>
+                                <dd className="mt-1 text-sm text-[#F5F7FA]">
+                                  {p.tools.join(", ")}
+                                </dd>
+                              </div>
+                            )}
+                          </dl>
                         </figcaption>
                       </figure>
                     ))}

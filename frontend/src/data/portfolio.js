@@ -190,27 +190,52 @@ export const projects = [
       {
         src: "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/8bnrh4xd_Coffee%20Advertisement%20%E2%80%94%20Self-Initiated%20Project.jpg",
         title: "Coffee Advertisement",
-        meta: "Product Advertisement · Self-Initiated · 2024",
+        category: "Product Advertisement",
+        type: "Self-Initiated Project",
+        year: "2024",
+        overview:
+          "A self-initiated coffee advertisement created to explore product-focused visual storytelling. The design uses dramatic lighting, warm tones, and a cinematic composition to highlight the richness and texture of the beverage while creating a premium and inviting atmosphere.",
+        tools: ["Adobe Photoshop"],
       },
       {
         src: "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/axzafc48_OnitsukaTiger%20Advertisement_Selt%20-%20Initiated%20Project.jpg",
         title: "Onitsuka Tiger Advertisement",
-        meta: "Product Advertisement · Self-Initiated · 2024",
+        category: "Product Advertisement",
+        type: "Self-Initiated Project",
+        year: "2024",
+        overview:
+          "A footwear advertisement inspired by the Onitsuka Tiger Mexico 66 silhouette. The design combines bold typography, product imagery, and a vibrant colour palette to create a visually striking composition that emphasises the product's distinctive identity.",
+        tools: ["Adobe Photoshop"],
       },
       {
         src: "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/6bkbs91u_Photo_Manipulation.jpg",
         title: "Automotive Photo Manipulation",
-        meta: "Photo Manipulation · Self-Initiated · 2024",
+        category: "Photo Manipulation",
+        type: "Self-Initiated Project",
+        year: "2024",
+        overview:
+          "A cinematic automotive visual created through photo manipulation and digital compositing techniques. The project focuses on composition, lighting, colour grading, and typography to transform a vehicle photograph into a visually engaging automotive campaign concept.",
+        tools: ["Adobe Photoshop"],
       },
       {
         src: "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/oyxkrqwh_Sneaker.jpg",
         title: "Sneaker Advertisement",
-        meta: "Product Advertisement · Self-Initiated · 2024",
+        category: "Product Advertisement",
+        type: "Self-Initiated Project",
+        year: "2024",
+        overview:
+          "A conceptual sneaker advertisement designed with a minimalist and modern visual approach. The composition focuses on product presentation, contrast, and bold typography to create strong visual hierarchy while keeping the footwear as the main focal point.",
+        tools: ["Adobe Photoshop"],
       },
       {
         src: "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/jggfn3es_Hoodie%20%E2%80%94%20Self-Initiated%20Project.jpg",
         title: "Hoodie Advertisement",
-        meta: "Product Advertisement · Self-Initiated · 2026",
+        category: "Product Advertisement",
+        type: "Self-Initiated Project",
+        year: "2026",
+        overview:
+          "A modern product advertisement created to showcase a minimalist hoodie through bold typography, dramatic lighting, and a monochromatic visual approach. The design focuses on strong visual hierarchy and product presentation to create a contemporary streetwear-inspired campaign.",
+        tools: ["Adobe Photoshop"],
       },
     ],
   },
