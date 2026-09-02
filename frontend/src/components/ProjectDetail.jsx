@@ -242,13 +242,116 @@ export const ProjectDetail = ({ project, onClose }) => {
               </div>
             )}
 
+            {/* Coffee Table Book deliverable */}
+            {project.book && (
+              <div className="mt-20" data-testid="coffee-table-book">
+                <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#2563FF]">
+                  {project.book.title}
+                </h4>
+                <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[#94A3B8]">
+                  {project.book.category}
+                </p>
+                <p className="mb-8 max-w-3xl text-base leading-relaxed text-[#94A3B8]">
+                  {project.book.description}
+                </p>
+                <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+                  {project.book.pages.map((pg, i) => (
+                    <figure key={i} className="group">
+                      <div className="overflow-hidden border border-white/10 bg-[#0a0a0a] transition-colors duration-300 group-hover:border-[#2563FF]/50">
+                        <img
+                          src={pg.src}
+                          alt={pg.caption}
+                          loading="lazy"
+                          className="h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+                        />
+                      </div>
+                      <figcaption className="mt-2 text-xs text-[#94A3B8]">
+                        {pg.caption}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Gallery */}
-            {project.gallery && project.gallery.length > 0 && (
+            {Boolean(project.posters?.length || project.gallery?.length) && (
               <div className="mt-20">
                 <h4 className="mb-8 text-xs font-bold uppercase tracking-[0.25em] text-[#94A3B8]">
                   Project Gallery
                 </h4>
-                {project.galleryLayout === "poster" ? (
+                {project.galleryLayout === "poster" && project.posters?.length ? (
+                  <div className="gap-8 [column-fill:_balance] sm:columns-2 [&>*]:mb-10">
+                    {project.posters.map((p, i) => (
+                      <figure
+                        key={i}
+                        data-testid={`poster-${i + 1}`}
+                        className="group break-inside-avoid"
+                      >
+                        <div className="overflow-hidden border border-white/10 bg-[#0a0a0a] transition-colors duration-300 group-hover:border-[#2563FF]/50 group-hover:shadow-glow">
+                          <img
+                            src={p.src}
+                            alt={p.title}
+                            loading="lazy"
+                            className="h-auto w-full object-contain"
+                          />
+                        </div>
+                        <figcaption className="mt-5">
+                          <span className="block font-display text-lg font-semibold text-[#F5F7FA]">
+                            {String(i + 1).padStart(2, "0")} — {p.title}
+                          </span>
+                          {p.overview && (
+                            <p className="mt-3 text-sm leading-relaxed text-[#94A3B8]">
+                              {p.overview}
+                            </p>
+                          )}
+                          <dl className="mt-4 grid grid-cols-2 gap-x-6 gap-y-3 border-t border-white/10 pt-4">
+                            {p.type && (
+                              <div>
+                                <dt className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#64748b]">
+                                  Project Type
+                                </dt>
+                                <dd className="mt-1 text-sm text-[#F5F7FA]">
+                                  {p.type}
+                                </dd>
+                              </div>
+                            )}
+                            {p.category && (
+                              <div>
+                                <dt className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#64748b]">
+                                  Category
+                                </dt>
+                                <dd className="mt-1 text-sm text-[#F5F7FA]">
+                                  {p.category}
+                                </dd>
+                              </div>
+                            )}
+                            {p.year && (
+                              <div>
+                                <dt className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#64748b]">
+                                  Year
+                                </dt>
+                                <dd className="mt-1 text-sm text-[#F5F7FA]">
+                                  {p.year}
+                                </dd>
+                              </div>
+                            )}
+                            {p.tools?.length > 0 && (
+                              <div>
+                                <dt className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#64748b]">
+                                  Tools
+                                </dt>
+                                <dd className="mt-1 text-sm text-[#F5F7FA]">
+                                  {p.tools.join(", ")}
+                                </dd>
+                              </div>
+                            )}
+                          </dl>
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                ) : project.galleryLayout === "poster" ? (
                   <div className="gap-4 [column-fill:_balance] sm:columns-2 [&>*]:mb-4">
                     {project.gallery
                       .filter((src) => src !== project.image)

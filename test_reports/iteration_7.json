@@ -1,0 +1,17 @@
+{
+  "summary": "Frontend-only verification of the Graphic Design poster info bug fix. Opened project-open-poster-design and validated all 5 posters (poster-1..poster-5) render title, overview paragraph and a dl with Project Type/Category/Year/Tools as visible live DOM text (display:block, visibility:visible, opacity:1, non-zero heights). Exact values verified: 01 Coffee => Product Advertisement/2024, 02 Onitsuka => Product Advertisement/2024, 03 Automotive => Photo Manipulation/2024, 04 Sneaker => Product Advertisement/2024, 05 Hoodie => Product Advertisement/2026; all with Self-Initiated Project + Adobe Photoshop. All 5 lazy images loaded (naturalWidth 1080-1170). Regression passed: Muar coffee-table-book shows 6 loaded pages, Video Editing shows 5 video-project cards, all modals close via project-detail-close. No console/page errors. No horizontal overflow at 1920/1440/390.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {"ui_bugs": [], "integration_issues": [], "design_issues": []},
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "ProjectDetail.jsx is ~400 lines with several inline gallery branches; consider extracting the poster/book/video gallery blocks into subcomponents for maintainability (non-blocking)."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "not tested", "frontend": "100%"},
+  "seed_data_creation": "none",
+  "should_call_test_agent_after_fix": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Poster info rendering fix verified fully at desktop (1920/1440) and mobile (390). Posters use loading='lazy' so scroll each figure into view before asserting naturalWidth. Project testids: project-open-muar-river-cruise, project-open-nacho-macho, project-open-poster-design; video cards video-project-1..5.",
+  "rca_of_the_issue": "Original bug: per-poster metadata existed in portfolio.js but the poster gallery branch rendered only image + title. Fix now maps each poster to a figure with overview <p> and <dl> of Project Type/Category/Year/Tools — confirmed rendered and visible."
+}
