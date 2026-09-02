@@ -48,7 +48,7 @@ export const projects = [
       "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/idbvq6ko_Screenshot%20%2849%29.png",
     video: "https://www.youtube.com/embed/G1pSbhbDWUI",
     overview:
-      "Muar River Cruise is an immersive documentary experience that invites viewers to explore the cultural heritage along Malaysia's Muar River. Combining aerial cinematography, spherical 360° footage and layered AR annotations, it reframes a traditional tourism film as something you can step inside.",
+      "Muar River Cruise is an immersive documentary experience that invites viewers to explore the cultural heritage along Malaysia's Muar River. Combining aerial cinematography, spherical 360° footage and layered AR annotations, it reframes a traditional tourism film as something you can step inside. This project was developed to showcase the cultural identity, history, and heritage of Muar, Johor through engaging visual storytelling — exploring Muar's historical landmarks, local culture, architecture, food, and community identity through multimedia and visual communication.",
     objective:
       "Promote Muar's heritage and tourism by transforming passive documentary viewing into an interactive, explorable journey.",
     role: "Concept, drone cinematography, 360° capture, editing and AR integration.",
@@ -62,6 +62,20 @@ export const projects = [
       "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/nk6gftcc_Tanjung%20emas.png",
       "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/caawx3kh_Screenshot%20%2850%29.png",
     ],
+    book: {
+      title: "Coffee Table Book",
+      category: "Editorial & Publication Design",
+      description:
+        "A coffee table book designed to document and showcase the cultural heritage, history, landmarks, and identity of Muar. The publication combines editorial layout, typography, photography, and visual storytelling to create an engaging reading experience that highlights the unique character of the town.",
+      pages: [
+        { src: "/muar-book/page1.webp", caption: "Cover — The Royal Town of Culture & Heritage" },
+        { src: "/muar-book/page2.webp", caption: "Table of Contents — Editorial system" },
+        { src: "/muar-book/page5.webp", caption: "Bandar Maharani — Royal Status" },
+        { src: "/muar-book/page6.webp", caption: "Iconic Landmarks of Muar" },
+        { src: "/muar-book/page8.webp", caption: "Muar River Cruise" },
+        { src: "/muar-book/page14.webp", caption: "Local Food Culture" },
+      ],
+    },
   },
   {
     id: "nacho-macho",
@@ -171,6 +185,33 @@ export const projects = [
       "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/axzafc48_OnitsukaTiger%20Advertisement_Selt%20-%20Initiated%20Project.jpg",
       "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/6bkbs91u_Photo_Manipulation.jpg",
       "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/oyxkrqwh_Sneaker.jpg",
+    ],
+    posters: [
+      {
+        src: "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/8bnrh4xd_Coffee%20Advertisement%20%E2%80%94%20Self-Initiated%20Project.jpg",
+        title: "Coffee Advertisement",
+        meta: "Product Advertisement · Self-Initiated · 2024",
+      },
+      {
+        src: "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/axzafc48_OnitsukaTiger%20Advertisement_Selt%20-%20Initiated%20Project.jpg",
+        title: "Onitsuka Tiger Advertisement",
+        meta: "Product Advertisement · Self-Initiated · 2024",
+      },
+      {
+        src: "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/6bkbs91u_Photo_Manipulation.jpg",
+        title: "Automotive Photo Manipulation",
+        meta: "Photo Manipulation · Self-Initiated · 2024",
+      },
+      {
+        src: "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/oyxkrqwh_Sneaker.jpg",
+        title: "Sneaker Advertisement",
+        meta: "Product Advertisement · Self-Initiated · 2024",
+      },
+      {
+        src: "https://customer-assets-m6fa6gv7.emergentagent.net/job_afif-multimedia/artifacts/jggfn3es_Hoodie%20%E2%80%94%20Self-Initiated%20Project.jpg",
+        title: "Hoodie Advertisement",
+        meta: "Product Advertisement · Self-Initiated · 2026",
+      },
     ],
   },
 ];
